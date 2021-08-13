@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.sidebar.p-menu {
+  height: 100%;
+  min-height: 100vh;
+}
+
+html,
+body {
+  background-color: var(--surface-b);
+  font-family: var(--font-family);
+}
+
+.text-layout {
+  color: var(--text-color);
+}
