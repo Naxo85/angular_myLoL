@@ -1,5 +1,3 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
 # compiled output
 /dist
 /tmp
@@ -43,3 +41,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Prov
+/dragontail-10.10.5
+/ranked*
+/tier-icons
