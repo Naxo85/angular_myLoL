@@ -13,7 +13,7 @@ export class ChampionService {
   private riotApiUrl: string = 'https://euw1.api.riotgames.com/lol';
 
   get httpParams() {
-    return new HttpParams().set('api_key', 'RGAPI-01e61f69-c0a1-48bf-9c16-ef939de7829b');
+    return new HttpParams().set('api_key', 'RGAPI-2f49db97-399f-4825-bf69-bd8b661b1800');
   }
 
   constructor(private http: HttpClient) {}

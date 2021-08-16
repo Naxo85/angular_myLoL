@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
 import { ChampionDetails } from '../../interfaces/championDetails.interface';
-import { ChampionService } from '../../services/champion.service';
 
 @Component({
   selector: 'app-champion-grid',
@@ -11,13 +10,15 @@ import { ChampionService } from '../../services/champion.service';
 export class ChampionGridComponent {
   @Input() championsDetails!: ChampionDetails[];
 
-  constructor(private championService: ChampionService) {}
-
   styleCard = { 'text-align': 'center', margin: '10px' };
+  displayResponsive: boolean = false;
+  currentChampionName: string = '';
+  currentChampionBio: string = '';
+  championIconUrl: string = '';
 
   changeStyle($event: { type: string }) {
     this.styleCard =
-      $event.type == 'mouseover'
+      $event.type == 'mouseenter'
         ? { 'text-align': 'center', margin: '1px' }
         : { 'text-align': 'center', margin: '10px' };
   }
@@ -29,7 +30,16 @@ export class ChampionGridComponent {
   getUrlImage(id: number) {
     return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${id}/${id}000.jpg`;
   }
+
   getUrlMastery(level: number) {
     return `https://raw.githubusercontent.com/RiotAPI/Riot-Games-API-Developer-Assets/master/champion-mastery-icons/mastery-${level}.png`;
+  }
+
+  showResponsiveDialog(name: string) {
+    this.displayResponsive = true;
+    this.currentChampionName = name;
+    let currentChampion: ChampionDetails = this.championsDetails.find((x) => x.name === name)!;
+    this.currentChampionBio = currentChampion.shortBio;
+    this.championIconUrl = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${currentChampion.id}.png`;
   }
 }
