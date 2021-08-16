@@ -2,3 +2,7 @@
   width: 70px;
   height: "auto";
 }
+
+.animate_custom_delay {
+  --animate-duration: 3s;
+}

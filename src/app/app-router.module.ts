@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ByMasteryComponent } from './champion/pages/by-mastery/by-mastery.component';
+import { PlayedChampsComponent } from './champion/pages/played-champs/played-champs.component';
 import { DetailsComponent } from './champion/pages/details/details.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ByMasteryComponent,
+    component: PlayedChampsComponent,
     pathMatch: 'full',
   },
   {

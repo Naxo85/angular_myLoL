@@ -5,17 +5,18 @@
     pButton
     pRipple
     type="button"
-    label="Primary"
+    label="Order By Mastery"
     class="p-button-outlined"
     style="margin: 10px"
+    (click)="orderByMastery()"
   ></button>
   <button
     pButton
-    pRipple
     type="button"
-    label="Primary"
+    label="Order By Last Play Time"
     class="p-button-outlined"
-    style="margin: 10px"
+    style="margin: 10px 10px 20px 10px"
+    (click)="orderByLastPlayTime()"
   ></button>
 
   <app-champion-grid [championsDetails]="championsDetails"></app-champion-grid>

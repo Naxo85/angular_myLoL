@@ -4,17 +4,18 @@ import { ChampionDetails } from '../../interfaces/championDetails.interface';
 import { ChampionService } from '../../services/champion.service';
 
 @Component({
-  selector: 'app-by-mastery',
-  templateUrl: './by-mastery.component.html',
+  selector: 'app-played-champs',
+  templateUrl: './played-champs.component.html',
   styles: [],
 })
-export class ByMasteryComponent implements OnInit {
-  title: string = 'Champions by Mastery';
+export class PlayedChampsComponent implements OnInit {
+  title: string = 'Played Champions';
 
   constructor(private championService: ChampionService) {}
 
   championsDetails: ChampionDetails[] = [];
   encryptedSummonerId: string = '82gdtzEFWNFtvviYyspWPYXY1Ov4pxKrWnIFypweVpjHXlM';
+  firstOrderHappened: boolean = false;
 
   ngOnInit(): void {
     this.championService.getMyChampionsByMastery(this.encryptedSummonerId).subscribe(
@@ -39,7 +40,11 @@ export class ByMasteryComponent implements OnInit {
     );
   }
 
-  ngDoCheck(): void {
+  orderByMastery() {
     this.championService.sortChampionsDetailsArrayByMastery(this.championsDetails);
+  }
+
+  orderByLastPlayTime() {
+    this.championService.sortChampionsDetailsArrayByLastPlayTime(this.championsDetails);
   }
 }

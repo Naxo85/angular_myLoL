@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { ChampionDetails } from '../../interfaces/championDetails.interface';
+import { ChampionService } from '../../services/champion.service';
 
 @Component({
   selector: 'app-champion-grid',
@@ -9,6 +10,8 @@ import { ChampionDetails } from '../../interfaces/championDetails.interface';
 })
 export class ChampionGridComponent {
   @Input() championsDetails!: ChampionDetails[];
+
+  constructor(private championService: ChampionService) {}
 
   styleCard = { 'text-align': 'center', margin: '10px' };
 

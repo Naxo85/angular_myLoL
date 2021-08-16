@@ -41,6 +41,12 @@ export class ChampionService {
     });
   }
 
+  sortChampionsDetailsArrayByLastPlayTime(championsDetails: ChampionDetails[]): ChampionDetails[] {
+    return championsDetails.sort(function (a, b) {
+      return b.lastPlayTime! - a.lastPlayTime!;
+    });
+  }
+
   // private _championsPrueba: Champion[] = [
   //   {
   //     championId: 78,
