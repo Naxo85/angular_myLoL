@@ -16,11 +16,15 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'Options',
+        label: 'My data',
+      },
+      {
+        label: 'My Champions',
         items: [
           {
-            label: 'Update',
-            icon: 'pi pi-refresh',
+            label: 'By Mastery',
+            icon: 'pi pi-star',
+            routerLink: '',
             command: () => {},
           },
           {
@@ -28,21 +32,6 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-times',
             command: () => {},
           },
-        ],
-      },
-      {
-        label: 'Navigate',
-        items: [
-          {
-            label: 'Angular',
-            icon: 'pi pi-external-link',
-            url: 'http://angular.io',
-          },
-          // {
-          //   label: 'Router',
-          //   icon: 'pi pi-upload',
-          //   routerLink: '/fileupload',
-          // },
         ],
       },
     ];

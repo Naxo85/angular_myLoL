@@ -1,0 +1,29 @@
+<div class="grid">
+  <div
+    class="col-lg-3 col-md-6 col-sm-12 animate__animated animate__fadeIn animate__slower"
+    *ngFor="let championDetails of championsDetails"
+  >
+    <p-card
+      [header]="championDetails.name"
+      [subheader]="championDetails.title"
+      [style]="styleCard"
+      (mouseover)="changeStyle($event)"
+      (mouseout)="changeStyle($event)"
+    >
+      <ng-template pTemplate="header">
+        <img alt="image" [src]="getUrlImage(championDetails.id)" />
+      </ng-template>
+
+      <i class="pi pi-calendar"></i> {{ championDetails.lastPlayTime | date }}
+      <br />
+      <img
+        alt="image"
+        [src]="getUrlMastery(championDetails.championLevel!)"
+        [class.masteryBadge]="true"
+      />
+      {{ championDetails.championPoints | number }} points
+
+      <ng-template pTemplate="footer"> <p-button label="Details"> </p-button></ng-template>
+    </p-card>
+  </div>
+</div>

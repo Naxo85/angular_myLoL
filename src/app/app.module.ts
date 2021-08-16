@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { PrimeNGModule } from './prime-ng/prime-ng.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+
+import { AppRouterModule } from './app-router.module';
 import { SharedModule } from './shared/shared.module';
+import { ChampionModule } from './champion/champion.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, PrimeNGModule, SharedModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRouterModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    ChampionModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
