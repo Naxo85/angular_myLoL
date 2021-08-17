@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 
 import { Champion } from '../interfaces/champion.interface';
 import { ChampionDetails } from '../interfaces/championDetails.interface';
+import { ChampionsInRotation } from '../interfaces/championsInRotation.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,11 @@ export class ChampionService {
   getMyChampionsByMastery(encryptedSummonerId: string): Observable<Champion[]> {
     const url = `${this.riotApiUrl}/champion-mastery/v4/champion-masteries/by-summoner/${encryptedSummonerId}`;
     return this.http.get<Champion[]>(url, { params: this.httpParams });
+  }
+
+  getChampionsInRotation(): Observable<ChampionsInRotation> {
+    const url = `${this.riotApiUrl}/platform/v3/champion-rotations`;
+    return this.http.get<ChampionsInRotation>(url, { params: this.httpParams });
   }
 
   getChampionDetails(championId: string) {

@@ -14,14 +14,16 @@
         <img alt="image" [src]="getUrlImage(championDetails.id)" />
       </ng-template>
 
-      <i class="pi pi-calendar"></i> {{ championDetails.lastPlayTime | date }}
-      <br />
-      <img
-        alt="image"
-        [src]="getUrlMastery(championDetails.championLevel!)"
-        [class.masteryBadge]="true"
-      />
-      {{ championDetails.championPoints | number }} points
+      <div *ngIf="championDetails.championLevel">
+        <i class="pi pi-calendar"></i> {{ championDetails.lastPlayTime | date }}
+        <br />
+        <img
+          alt="image"
+          [src]="getUrlMastery(championDetails.championLevel!)"
+          [class.masteryBadge]="true"
+        />
+        {{ championDetails.championPoints | number }} points
+      </div>
 
       <ng-template pTemplate="footer">
         <p-button

@@ -3,16 +3,24 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PlayedChampsComponent } from './champion/pages/played-champs/played-champs.component';
 import { DetailsComponent } from './champion/pages/details/details.component';
+import { RotationChampsComponent } from './champion/pages/rotation-champs/rotation-champs.component';
 
 const routes: Routes = [
   {
     path: '',
     component: PlayedChampsComponent,
-    pathMatch: 'full',
+  },
+  {
+    path: 'played',
+    component: PlayedChampsComponent,
   },
   {
     path: 'details/:championId',
     component: DetailsComponent,
+  },
+  {
+    path: 'rotation',
+    component: RotationChampsComponent,
   },
   {
     path: '**',

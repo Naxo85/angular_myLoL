@@ -19,18 +19,17 @@ export class MenuComponent implements OnInit {
         label: 'My data',
       },
       {
-        label: 'My Champions',
+        label: 'Champions',
         items: [
           {
-            label: 'By Mastery',
+            label: 'Played',
             icon: 'pi pi-star',
-            routerLink: '',
-            command: () => {},
+            routerLink: 'played',
           },
           {
-            label: 'Delete',
-            icon: 'pi pi-times',
-            command: () => {},
+            label: 'Rotation',
+            icon: 'pi pi-refresh',
+            routerLink: 'rotation',
           },
         ],
       },
