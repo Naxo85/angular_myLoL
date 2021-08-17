@@ -1,23 +1,24 @@
 <div class="row text-layout m-3 animate__animated animate__fadeIn animate__slower">
   <h2>{{ title }}</h2>
   <hr />
-  <button
-    pButton
-    pRipple
-    type="button"
-    label="Order By Mastery"
-    class="p-button-outlined"
-    style="margin: 10px"
-    (click)="orderByMastery()"
-  ></button>
-  <button
-    pButton
-    type="button"
-    label="Order By Last Play Time"
-    class="p-button-outlined"
-    style="margin: 10px 10px 20px 10px"
-    (click)="orderByLastPlayTime()"
-  ></button>
+  <div style="padding: 10px 10px 20px 10px">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Order By Mastery"
+      class="p-button-outlined col-sm-12"
+      (click)="orderByMastery()"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Order By Last Play Time"
+      class="p-button-outlined col-sm-12"
+      style="margin-top: 10px"
+      (click)="orderByLastPlayTime()"
+    ></button>
+  </div>
 
   <app-champion-grid [championsDetails]="championsDetails"></app-champion-grid>
 </div>
