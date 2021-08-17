@@ -20,6 +20,7 @@
         <img
           alt="image"
           [src]="getUrlMastery(championDetails.championLevel!)"
+          [title]="getBadgeMessage(championDetails.championLevel!)"
           [class.masteryBadge]="true"
         />
         {{ championDetails.championPoints | number }} points

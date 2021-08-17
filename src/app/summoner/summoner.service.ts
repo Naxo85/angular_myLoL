@@ -11,9 +11,10 @@ export class SummonerService {
 
   private riotApiUrl: string = 'https://euw1.api.riotgames.com/lol';
   private summoner_name: string = 'Lirieth';
+  private apiKey: string = 'RGAPI-b35b7b90-cc37-43a2-b5c6-76c3a9ffd493';
 
   get httpParams() {
-    return new HttpParams().set('api_key', 'RGAPI-2f49db97-399f-4825-bf69-bd8b661b1800');
+    return new HttpParams().set('api_key', this.apiKey);
   }
 
   getSummonerInfo(): Observable<Summoner> {

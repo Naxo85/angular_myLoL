@@ -27,12 +27,16 @@ export class ChampionGridComponent {
     return 'Level: ' + level + ', Points: ' + points;
   }
 
-  getUrlImage(id: number) {
+  getUrlImage(id: number): string {
     return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${id}/${id}000.jpg`;
   }
 
   getUrlMastery(level: number) {
     return `https://raw.githubusercontent.com/RiotAPI/Riot-Games-API-Developer-Assets/master/champion-mastery-icons/mastery-${level}.png`;
+  }
+
+  getBadgeMessage(level: number): string {
+    return 'Champion Mastery level: ' + level;
   }
 
   showResponsiveDialog(name: string) {
