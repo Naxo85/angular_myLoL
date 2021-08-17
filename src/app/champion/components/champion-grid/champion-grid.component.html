@@ -41,6 +41,8 @@
           [draggable]="false"
           [resizable]="true"
           class="animate__animated animate__fadeIn animate__slow"
+          (onHide)="mouseLeave()"
+          [modal]="true"
         >
           <img alt="image" [src]="championIconUrl" style="margin-bottom: 20px" />
           <p>

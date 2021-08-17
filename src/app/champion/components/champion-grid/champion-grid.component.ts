@@ -46,4 +46,8 @@ export class ChampionGridComponent {
     this.currentChampionBio = currentChampion.shortBio;
     this.championIconUrl = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${currentChampion.id}.png`;
   }
+
+  mouseLeave() {
+    this.styleCard = { 'text-align': 'center', margin: '10px' };
+  }
 }
