@@ -1,0 +1,13 @@
+.small-image {
+  max-width: 50px;
+}
+
+:host ::ng-deep .p-chip.custom-chip-success {
+  background: var(--primary-color);
+  color: var(--primary-color-text);
+}
+
+:host ::ng-deep .p-chip.custom-chip-danger {
+  background: rgb(165, 58, 58);
+  color: white;
+}

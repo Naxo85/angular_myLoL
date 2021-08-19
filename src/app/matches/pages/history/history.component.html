@@ -1,0 +1,77 @@
+<div class="card" style="margin: 20px">
+  <p-table
+    [value]="customDetails"
+    [loading]="loading"
+    [paginator]="true"
+    [rows]="rows"
+    [totalRecords]="matchesId.length"
+    dataKey="gameId"
+    [lazy]="true"
+    (onLazyLoad)="loadMatches($event)"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 4rem"></th>
+        <th pSortableColumn="gameStartTimestamp">
+          Date<p-sortIcon field="gameStartTimestamp"></p-sortIcon>
+        </th>
+        <th>Champion</th>
+        <th>K/D/A</th>
+        <th>Game Mode</th>
+        <th>Result</th>
+      </tr>
+    </ng-template>
+    <ng-template
+      pTemplate="body"
+      let-customDetail
+      let-expanded="expanded"
+      class="animate__animated animate__fadeIn animate__delay-2s"
+    >
+      <tr>
+        <td>
+          <button
+            type="button"
+            pButton
+            pRipple
+            [pRowToggler]="customDetail"
+            class="p-button-text p-button-rounded p-button-plain"
+            [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+          ></button>
+        </td>
+        <td>
+          <span class="p-column-title">Date</span>
+          {{ customDetail.gameStartTimestamp | date }}
+        </td>
+        <td>
+          <span class="p-column-title">Champion</span>
+          <img
+            class="img-fluid small-image"
+            [src]="customDetail.championUrl"
+            [title]="customDetail.championName"
+          />
+        </td>
+        <td>
+          <span class="p-column-title">K/D/A</span>
+          {{ customDetail.kills }}/{{ customDetail.assists }}/{{ customDetail.deaths }}
+        </td>
+        <td>
+          <span class="p-column-title">Game Mode</span>
+          {{ customDetail.gameMode | titlecase }}
+        </td>
+        <td>
+          <span class="p-column-title">Result</span>
+          <p-chip
+            [label]="getResult(customDetail.win) | titlecase"
+            [styleClass]="'p-mr-2 custom-chip-' + getResultClass(customDetail.win)"
+            [icon]="'pi pi-thumbs-' + getThumbsIcon(customDetail.win)"
+          ></p-chip>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-product
+      ><tr>
+        <td colspan="6">More data</td>
+      </tr></ng-template
+    >
+  </p-table>
+</div>

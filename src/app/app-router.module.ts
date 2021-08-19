@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlayedChampsComponent } from './champion/pages/played-champs/played-champs.component';
 import { DetailsComponent } from './champion/pages/details/details.component';
 import { RotationChampsComponent } from './champion/pages/rotation-champs/rotation-champs.component';
-import { HistoryComponent } from './games/pages/history/history.component';
+import { HistoryComponent } from './matches/pages/history/history.component';
 
 const routes: Routes = [
   {

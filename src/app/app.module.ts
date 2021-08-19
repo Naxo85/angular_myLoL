@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRouterModule } from './app-router.module';
 import { SharedModule } from './shared/shared.module';
 import { ChampionModule } from './champion/champion.module';
-import { GamesModule } from './games/games.module';
+import { MatchesModule } from './matches/matches.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +19,7 @@ import { GamesModule } from './games/games.module';
     BrowserAnimationsModule,
     SharedModule,
     ChampionModule,
-    GamesModule,
+    MatchesModule,
   ],
   bootstrap: [AppComponent],
 })

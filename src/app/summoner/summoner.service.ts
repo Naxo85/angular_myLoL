@@ -11,7 +11,7 @@ export class SummonerService {
 
   private riotApiUrl: string = 'https://euw1.api.riotgames.com/lol';
   private summoner_name: string = 'Cruzadix';
-  private apiKey: string = 'RGAPI-b35b7b90-cc37-43a2-b5c6-76c3a9ffd493';
+  private apiKey: string = 'RGAPI-602dd8a5-d86d-4d4e-9074-0ab868d15ad1';
 
   get httpParams() {
     return new HttpParams().set('api_key', this.apiKey);
