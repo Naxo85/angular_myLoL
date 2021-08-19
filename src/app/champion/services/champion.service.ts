@@ -6,16 +6,16 @@ import { tap } from 'rxjs/operators';
 import { Champion } from '../interfaces/champion.interface';
 import { ChampionDetails } from '../interfaces/championDetails.interface';
 import { ChampionsInRotation } from '../interfaces/championsInRotation.interface';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChampionService {
   private riotApiUrl: string = 'https://euw1.api.riotgames.com/lol';
-  private apiKey: string = 'RGAPI-602dd8a5-d86d-4d4e-9074-0ab868d15ad1';
 
   get httpParams() {
-    return new HttpParams().set('api_key', this.apiKey);
+    return new HttpParams().set('api_key', environment.apiKey);
   }
 
   constructor(private http: HttpClient) {}

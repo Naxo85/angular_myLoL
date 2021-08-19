@@ -39,6 +39,33 @@ export class HistoryComponent implements OnInit {
     });
   }
 
+  loadMatches(event: LazyLoadEvent) {
+    this.loading = true;
+    if (
+      (event.first != undefined && event.rows != undefined && event.first !== this.currentFirst) ||
+      !this.currentFirst
+    ) {
+      this.currentFirst = event.first!;
+      this.customDetails = [];
+      setTimeout(() => {
+        for (let match of this.matchesId.slice(event.first, event.first! + event.rows!)) {
+          this.getMatchesDetails(match, this.summonerPuuid);
+        }
+      }, 500);
+    }
+
+    if (event.sortField) {
+      setTimeout(() => {
+        this.matchesService.sortMatchesDetailsArray(
+          this.customDetails,
+          event.sortField!,
+          event.sortOrder!
+        );
+      }, 1000);
+    }
+    this.loading = false;
+  }
+
   getMatchesDetails(match: string, puuid: string) {
     this.matchesService.getMatchDetails(match).subscribe(
       (matchDetails) => {
@@ -73,35 +100,5 @@ export class HistoryComponent implements OnInit {
   }
   getThumbsIcon(result: boolean): string {
     return result ? 'up' : 'down';
-  }
-
-  loadMatches(event: LazyLoadEvent) {
-    console.log(event);
-
-    this.loading = true;
-    if (
-      (event.first != undefined && event.rows != undefined && event.first !== this.currentFirst) ||
-      !this.currentFirst
-    ) {
-      this.currentFirst = event.first!;
-      this.customDetails = [];
-      setTimeout(() => {
-        for (let match of this.matchesId.slice(event.first, event.first! + event.rows!)) {
-          this.getMatchesDetails(match, this.summonerPuuid);
-        }
-      }, 500);
-    }
-
-    if (event.sortField) {
-      setTimeout(() => {
-        this.matchesService.sortMatchesDetailsArray(
-          this.customDetails,
-          event.sortField!,
-          event.sortOrder!
-        );
-        console.log(this.customDetails);
-      }, 1000);
-    }
-    this.loading = false;
   }
 }

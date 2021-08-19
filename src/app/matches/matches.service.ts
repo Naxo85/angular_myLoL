@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { MatchDetails } from './interfaces/matchDetails.interface';
 import { CustomDetails } from './interfaces/customDetails.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +12,9 @@ import { CustomDetails } from './interfaces/customDetails.interface';
 export class MatchesService {
   private riotApiUrlv2: string = 'https://europe.api.riotgames.com/lol';
 
-  private apiKey: string = 'RGAPI-602dd8a5-d86d-4d4e-9074-0ab868d15ad1';
-
   get httpParams() {
-    return new HttpParams().set('api_key', this.apiKey);
+    return new HttpParams().set('api_key', environment.apiKey);
   }
-
-  //uYkJifzok5GspJHducglTnF2PiGKT2BfhVytUyeL2-_AziwC1-A_7pS_8fJ8fUrZ3w054NzyQdUzlw/ids
 
   constructor(private http: HttpClient) {}
 
@@ -34,7 +31,6 @@ export class MatchesService {
   }
 
   sortMatchesDetailsArray(customDetails: CustomDetails[], sortField: string, sortOrder: number) {
-    console.log(customDetails.length);
     customDetails.sort((a, b) => {
       let difference: string | number | boolean =
         a[sortField as keyof CustomDetails & number] - b[sortField as keyof CustomDetails & number];

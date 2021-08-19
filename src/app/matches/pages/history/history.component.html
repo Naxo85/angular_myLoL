@@ -21,14 +21,9 @@
         <th>Result</th>
       </tr>
     </ng-template>
-    <ng-template
-      pTemplate="body"
-      let-customDetail
-      let-expanded="expanded"
-      class="animate__animated animate__fadeIn animate__delay-2s"
-    >
+    <ng-template pTemplate="body" let-customDetail let-expanded="expanded">
       <tr>
-        <td>
+        <td class="animate__animated animate__fadeIn animate__delay-2s">
           <button
             type="button"
             pButton
@@ -38,11 +33,11 @@
             [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
           ></button>
         </td>
-        <td>
+        <td class="animate__animated animate__fadeIn animate__delay-2s">
           <span class="p-column-title">Date</span>
           {{ customDetail.gameStartTimestamp | date }}
         </td>
-        <td>
+        <td class="animate__animated animate__fadeIn animate__delay-2s">
           <span class="p-column-title">Champion</span>
           <img
             class="img-fluid small-image"
@@ -50,15 +45,15 @@
             [title]="customDetail.championName"
           />
         </td>
-        <td>
+        <td class="animate__animated animate__fadeIn animate__delay-2s">
           <span class="p-column-title">K/D/A</span>
           {{ customDetail.kills }}/{{ customDetail.assists }}/{{ customDetail.deaths }}
         </td>
-        <td>
+        <td class="animate__animated animate__fadeIn animate__delay-2s">
           <span class="p-column-title">Game Mode</span>
           {{ customDetail.gameMode | titlecase }}
         </td>
-        <td>
+        <td class="animate__animated animate__fadeIn animate__delay-2s">
           <span class="p-column-title">Result</span>
           <p-chip
             [label]="getResult(customDetail.win) | titlecase"
@@ -68,10 +63,10 @@
         </td>
       </tr>
     </ng-template>
-    <ng-template pTemplate="rowexpansion" let-product
-      ><tr>
+    <ng-template pTemplate="rowexpansion" let-product>
+      <tr>
         <td colspan="6">More data</td>
-      </tr></ng-template
-    >
+      </tr>
+    </ng-template>
   </p-table>
 </div>
