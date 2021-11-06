@@ -32,3 +32,9 @@ We can bypass this restriction in local deployments:
 ## Development server
 
 Run `ng serve -o` for a dev server.
+
+
+## Future updates
+
+- Use AWS lamba to fix CORS issue
+- Pop up to catch dynamycally the desired summoner name
