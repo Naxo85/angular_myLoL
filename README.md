@@ -1,27 +1,34 @@
 # MyLoL
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+MyLoL is a personal project to practice PrimeNG & Angular using the API of one of my favorite games: League of Legends
+
+This project was generated with [Angular CLI] (https://github.com/angular/angular-cli) version 12.2.0.
+
+
+## Downloading the project
+
+Clone the project within the desired local folder: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository 
+
+Next steps assume you are using git bash (or similar tool) and within the project's folder.
+
+
+## Installing needed packages
+
+Run `npm install` for download and install all needed packages from npm repository
+
+
+## Avoiding CORS
+
+RIOT api follow CORS policies and due to this project is an only front-end app and is not possible hide the secret api key (a backend is needed or a proxy)
+https://riot-api-libraries.readthedocs.io/en/latest/mobile.html
+
+We can bypass this restriction in local deployments:
+- Install CORS chrome plugin https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es
+- turn it on: 
+- 
+     ![image](https://user-images.githubusercontent.com/62815133/140618669-8bdd82f1-cc6f-4d9a-9bf9-f6960e268abd.png)
+  
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng serve -o` for a dev server.
